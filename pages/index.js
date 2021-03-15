@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Head from 'next/head';
 import { Image, Tab } from 'semantic-ui-react';
 
 const Centered = styled.div`
@@ -17,7 +18,7 @@ const panes = [
     menuItem: { key: 'me', icon: 'user', content: '自己紹介' },
     // eslint-disable-next-line react/display-name
     render: () => (
-      <Tab.Pane attached={false} as="div">
+      <Tab.Pane attached={'false'} as="div">
         <h3 className="ui dividing header">ハンドルネーム</h3>
         <ruby>
           QUANON<rt>くあのん</rt>
@@ -70,7 +71,7 @@ const panes = [
     menuItem: { key: 'favorite', icon: 'heart', content: '好きなもの' },
     // eslint-disable-next-line react/display-name
     render: () => (
-      <Tab.Pane attached={false} as="div">
+      <Tab.Pane attached={'false'} as="div">
         WIP
       </Tab.Pane>
     )
@@ -82,23 +83,28 @@ const TabExampleSecondaryPointing = () => (
 );
 
 const Home = () => (
-  <div className="ui container">
-    <Centered>
-      <div>
-        <h1>QUANON</h1>
-      </div>
-      <div>
-        <Image src="/kyoko.png" size="medium" circular />
-      </div>
-      <div>
-        <span>icon by </span>
-        <a href="https://twitter.com/LynxLLLLLL" rel="noopener noreferrer" target="_blank">
-          @LynxLLLLLL
-        </a>
-      </div>
-    </Centered>
-    <TabExampleSecondaryPointing></TabExampleSecondaryPointing>
-  </div>
+  <>
+    <Head>
+      <title>QUANON</title>
+    </Head>
+    <div className="ui container">
+      <Centered>
+        <div>
+          <h1>QUANON</h1>
+        </div>
+        <div>
+          <Image src="/kyoko.png" size="medium" circular />
+        </div>
+        <div>
+          <span>icon by </span>
+          <a href="https://twitter.com/LynxLLLLLL" rel="noopener noreferrer" target="_blank">
+            @LynxLLLLLL
+          </a>
+        </div>
+      </Centered>
+      <TabExampleSecondaryPointing></TabExampleSecondaryPointing>
+    </div>
+  </>
 );
 
 export default Home;
