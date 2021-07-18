@@ -12,6 +12,13 @@ export default class MyApp extends App {
         <style jsx global>{`
           body {
             padding: 1rem;
+            height: 100vh;
+          }
+          #__next {
+            height: 100%;
+          }
+          #__next > div {
+            height: 100%;
           }
         `}</style>
       </>
