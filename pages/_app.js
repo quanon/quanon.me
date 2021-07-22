@@ -10,13 +10,7 @@ export default class MyApp extends App {
       <>
         <Component {...pageProps} />
         <style jsx global>{`
-          body {
-            padding: 1rem;
-            height: 100vh;
-          }
-          #__next {
-            height: 100%;
-          }
+          #__next,
           #__next > div {
             height: 100%;
           }
