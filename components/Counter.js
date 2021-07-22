@@ -1,4 +1,4 @@
-import { useState, forwardRef, useImperativeHandle } from 'react';
+import { useEffect, useState, forwardRef, useImperativeHandle } from 'react';
 import styled from 'styled-components';
 
 const StyledCounter = styled.div`
@@ -87,6 +87,26 @@ const Counter = (props, ref) => {
       setFutureHistory([]);
     }
   }));
+
+  useEffect(() => {
+    const data = JSON.parse(localStorage.getItem(props.name));
+    if (data) {
+      setCount(data.count);
+      setHistory(data.history);
+      setFutureHistory(data.futureHistory);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem(
+      props.name,
+      JSON.stringify({
+        count,
+        history,
+        futureHistory
+      })
+    );
+  }, [count, history]);
 
   return (
     <StyledCounter className={props.className} colors={props.colors}>

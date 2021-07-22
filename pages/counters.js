@@ -27,6 +27,13 @@ const Counters = () => {
         <link rel="manifest" href="/manifest.webmanifest" />
         <link rel="apple-touch-icon" href="/icon-192x192.png" />
       </Head>
+      <style jsx global>{`
+        /* Prevent scrolling in Safari. */
+        body {
+          position: fixed;
+          width: 100%;
+        }
+      `}</style>
       <div
         style={{
           display: 'flex',
@@ -35,6 +42,7 @@ const Counters = () => {
           flexDirection: 'column'
         }}>
         <UpsideDownCounter
+          name={'you'}
           ref={opponentRef}
           colors={{ card: '#73b1e2', button: '#5ea5de', history: '#2981c6' }}></UpsideDownCounter>
         <ResetButton
@@ -45,16 +53,10 @@ const Counters = () => {
             }
           }}></ResetButton>
         <Counter
+          name={'me'}
           ref={myRef}
           colors={{ card: '#e273b1', button: '#de5ea5', history: '#c62981' }}></Counter>
       </div>
-      <style jsx global>{`
-        /* Prevent scrolling in Safari. */
-        body {
-          position: fixed;
-          width: 100%;
-        }
-      `}</style>
     </>
   );
 };
