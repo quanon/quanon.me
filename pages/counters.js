@@ -23,7 +23,7 @@ const Counters = () => {
   return (
     <>
       <Head>
-        <title>MTG Life Counters</title>
+        <title>カウンター</title>
         <link rel="manifest" href="/manifest.webmanifest" />
         <link rel="apple-touch-icon" href="/icon-192x192.png" />
       </Head>
@@ -39,7 +39,7 @@ const Counters = () => {
           colors={{ card: '#73b1e2', button: '#5ea5de', history: '#2981c6' }}></UpsideDownCounter>
         <ResetButton
           onClick={() => {
-            if (window.confirm('Do you really want to reset the life counters?')) {
+            if (window.confirm('ライフカウンターをリセットしますか？')) {
               myRef.current.reset();
               opponentRef.current.reset();
             }

@@ -2,9 +2,9 @@
   "display": "standalone",
   "scope": "/counters",
   "start_url": "/counters",
-  "name": "MTG Life Countersr",
-  "short_name": "MTG Life Counters",
-  "description": "MTG Life Counters",
+  "name": "カウンター",
+  "short_name": "カウンター",
+  "description": "MTG ライフカウンター",
   "icons": [
     {
       "src": "/icon-192x192.png",
