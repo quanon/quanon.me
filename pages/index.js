@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Head from 'next/head';
 import { Image, Tab } from 'semantic-ui-react';
+import Link from 'next/link';
 
 const Centered = styled.div`
   display: flex;
@@ -68,19 +69,34 @@ const panes = [
     )
   },
   {
-    menuItem: { key: 'favorite', icon: 'heart', content: '好きなもの' },
+    menuItem: { key: 'favorite', icon: 'heart', content: '好き' },
     // eslint-disable-next-line react/display-name
     render: () => (
       <Tab.Pane attached={'false'} as="div">
         WIP
       </Tab.Pane>
     )
+  },
+  {
+    menuItem: { key: 'tools', icon: 'wrench', content: 'ツール' },
+    // eslint-disable-next-line react/display-name
+    render: () => (
+      <Tab.Pane attached={'false'} as="div">
+        <div className="ui bulleted list">
+          <div className="item">
+            <div className="content">
+              <Link href="/counters">
+                <a>ライフカウンター</a>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </Tab.Pane>
+    )
   }
 ];
 
-const TabExampleSecondaryPointing = () => (
-  <Tab menu={{ secondary: true, pointing: true }} panes={panes} />
-);
+const TabSecondaryPointing = () => <Tab menu={{ secondary: true, pointing: true }} panes={panes} />;
 
 const Home = () => (
   <>
@@ -102,7 +118,7 @@ const Home = () => (
           </a>
         </div>
       </Centered>
-      <TabExampleSecondaryPointing></TabExampleSecondaryPointing>
+      <TabSecondaryPointing></TabSecondaryPointing>
     </div>
   </>
 );
