@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import Counter from '../components/Counter';
 import ResetButton from '../components/ResetButton';
@@ -11,6 +11,14 @@ const UpsideDownCounter = styled(Counter)`
 const Counters = () => {
   const myRef = useRef();
   const opponentRef = useRef();
+
+  useEffect(() => {
+    // Prevent scrolling in Safari.
+    window.addEventListener('scroll', (e) => {
+      e.preventDefault();
+      window.scrollTo(0, 0);
+    });
+  });
 
   return (
     <>
@@ -40,6 +48,13 @@ const Counters = () => {
           ref={myRef}
           colors={{ card: '#e273b1', button: '#de5ea5', history: '#c62981' }}></Counter>
       </div>
+      <style jsx global>{`
+        /* Prevent scrolling in Safari. */
+        body {
+          position: fixed;
+          width: 100%;
+        }
+      `}</style>
     </>
   );
 };
