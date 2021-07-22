@@ -95,3 +95,8 @@ typings/
 # End of https://www.gitignore.io/api/node
 
 .vercel
+
+# PWA
+public/workbox**
+public/sw**
+public/fallback-development.js
