@@ -115,7 +115,7 @@ const Counter = (props, ref) => {
         <div className="ui horizontal list">{renderHistory(history)}</div>
       </div>
       <div className="ui center aligned grid">
-        <div className="ui buttons">
+        <div className="ui big buttons">
           <button
             className={`ui button ${history.length === 1 ? 'disabled' : ''}`}
             onClick={() => {
